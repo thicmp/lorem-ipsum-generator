@@ -1,6 +1,7 @@
 package br.com.thiagoamm.loremipsum.exception;
 
 import br.com.thiagoamm.loremipsum.enumeration.TextualEntity;
+import br.com.thiagoamm.loremipsum.message.LoremIpsumMessage;
 
 import static br.com.thiagoamm.loremipsum.message.LoremIpsumMessage.messageAmountCannotBeGreaterThanLimit;
 import static br.com.thiagoamm.loremipsum.message.LoremIpsumMessage.messageAmountCannotBeLowerThanLimit;
@@ -37,12 +38,28 @@ public class LoremIpsumException extends RuntimeException {
         return new LoremIpsumException(messageAmountCannotBeGreaterThanLimit(target, limit));
     }
 
+    public static LoremIpsumException ofFileNameIsNullException() {
+        return new LoremIpsumException(LoremIpsumMessage.FILE_NAME_IS_NULL);
+    }
+
+    public static LoremIpsumException ofFileNameIsBlankException() {
+        return new LoremIpsumException(LoremIpsumMessage.FILE_NAME_IS_BLANK);
+    }
+
     public static void amountCannotBeLowerThanLimitException(TextualEntity target, int limit) {
         throw ofAmountCannotBeLowerThanLimitException(target, limit);
     }
 
     public static void amountCannotBeGreaterThanLimitException(TextualEntity target, int limit) {
         throw ofAmountCannotBeGreaterThanLimitException(target, limit);
+    }
+
+    public static void fileNameIsNullException() {
+        throw ofFileNameIsNullException();
+    }
+
+    public static void fileNameIsBlankException() {
+        throw ofFileNameIsBlankException();
     }
 
 }
