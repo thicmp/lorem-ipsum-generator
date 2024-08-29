@@ -6,9 +6,9 @@ package br.com.thiagoamm.loremipsum.enumeration;
 public enum TextualEntityAmountLimit {
 
     WORD_LOWER_LIMIT(0),
-    WORD_UPPER_LIMIT(100_000),
+    WORD_UPPER_LIMIT(84_830),
     SENTENCE_LOWER_LIMIT(0),
-    SENTENCE_UPPER_LIMIT(10_000),
+    SENTENCE_UPPER_LIMIT(3_523),
     PARAGRAPH_LOWER_LIMIT(0),
     PARAGRAPH_UPPER_LIMIT(1000);
 
