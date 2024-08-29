@@ -1,7 +1,9 @@
 package br.com.thiagoamm.loremipsum.enumeration;
 
 /**
- * Responsible for specifying quantity limits for each textual entity.
+ * Responsible for specifying quantity limits (lower and upper)
+ * for each textual entity (word, sentence or paragraph)
+ * in src/main/resources/br/com/thiagoamm/loremipsum/file/lorem-ipsum.txt file.
  */
 public enum TextualEntityAmountLimit {
 
