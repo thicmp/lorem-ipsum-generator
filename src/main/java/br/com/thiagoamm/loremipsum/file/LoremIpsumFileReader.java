@@ -14,8 +14,7 @@ import java.util.logging.Logger;
 
 import static br.com.thiagoamm.loremipsum.enumeration.TextualEntity.PARAGRAPH;
 import static br.com.thiagoamm.loremipsum.enumeration.UnicodeCodePoint.*;
-import static br.com.thiagoamm.loremipsum.exception.LoremIpsumException.amountCannotBeGreaterThanLimitException;
-import static br.com.thiagoamm.loremipsum.exception.LoremIpsumException.amountCannotBeLowerThanLimitException;
+import static br.com.thiagoamm.loremipsum.exception.LoremIpsumException.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
@@ -152,9 +151,11 @@ public final class LoremIpsumFileReader {
 
     private static void checkFileName(String fileName) {
         try {
-            Objects.requireNonNull(fileName, "File name is null!");
+            if (fileName == null) {
+                fileNameIsNullException();
+            }
             if (fileName.isBlank()) {
-                throw new IllegalArgumentException("File name is blank!");
+                fileNameIsBlankException();
             }
         } catch (RuntimeException e) {
             logger.warning(e.getMessage());
