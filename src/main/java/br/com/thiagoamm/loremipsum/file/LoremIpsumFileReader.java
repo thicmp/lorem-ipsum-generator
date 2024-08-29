@@ -18,7 +18,7 @@ import static br.com.thiagoamm.loremipsum.exception.LoremIpsumException.*;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 /**
- * Responsável por ler as linhas do arquivo que contém o texto lorem ipsum.
+ * Responsible for reading the lines of the file containing the lorem ipsum text.
  */
 public final class LoremIpsumFileReader {
 
