@@ -2,6 +2,7 @@ package br.com.thiagoamm.loremipsum.generator;
 
 import br.com.thiagoamm.loremipsum.file.LoremIpsumFileReader;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -31,6 +32,21 @@ public class LoremIpsumTextGenerator implements LoremIpsumGenerator {
     }
 
     @Override
+    public List<String> generateShuffleWords(int amount) {
+        List<String> words = fileReader.readWords(amount, FILE_NAME);
+        Collections.shuffle(words);
+        return words;
+    }
+
+    @Override
+    public List<String> generateShuffleWordsBetween(int minAmount, int maxAmount) {
+        int amount = getRandomAmount(minAmount, maxAmount);
+        List<String> words = fileReader.readWords(amount, FILE_NAME);
+        Collections.shuffle(words);
+        return words;
+    }
+
+    @Override
     public List<String> generateSentences(int amount) {
         return fileReader.readSentences(amount, FILE_NAME);
     }
@@ -42,6 +58,21 @@ public class LoremIpsumTextGenerator implements LoremIpsumGenerator {
     }
 
     @Override
+    public List<String> generateShuffleSentences(int amount) {
+        List<String> sentences = fileReader.readSentences(amount, FILE_NAME);
+        Collections.shuffle(sentences);
+        return sentences;
+    }
+
+    @Override
+    public List<String> generateShuffleSentencesBetween(int minAmount, int maxAmount) {
+        int amount = getRandomAmount(minAmount, maxAmount);
+        List<String> sentences = fileReader.readSentences(amount, FILE_NAME);
+        Collections.shuffle(sentences);
+        return sentences;
+    }
+
+    @Override
     public List<String> generateParagraphs(int amount) {
         return fileReader.readParagraphs(amount, FILE_NAME);
     }
@@ -50,6 +81,21 @@ public class LoremIpsumTextGenerator implements LoremIpsumGenerator {
     public List<String> generateParagraphsBetween(int minAmount, int maxAmount) {
         int amount = getRandomAmount(minAmount, maxAmount);
         return fileReader.readParagraphs(amount, FILE_NAME);
+    }
+
+    @Override
+    public List<String> generateShuffleParagraphs(int amount) {
+        List<String> paragraphs = fileReader.readParagraphs(amount, FILE_NAME);
+        Collections.shuffle(paragraphs);
+        return paragraphs;
+    }
+
+    @Override
+    public List<String> generateShuffleParagraphsBetween(int minAmount, int maxAmount) {
+        int amount = getRandomAmount(minAmount, maxAmount);
+        List<String> paragraphs = fileReader.readParagraphs(amount, FILE_NAME);
+        Collections.shuffle(paragraphs);
+        return paragraphs;
     }
 
     private int getRandomAmount(int minAmount, int maxAmount) {
