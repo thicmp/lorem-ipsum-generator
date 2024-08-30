@@ -170,6 +170,4 @@ class LoremIpsumTextGeneratorTest {
         assertNotNull(paragraphs);
         assertTrue(expectedParagraphsAmountCondition.test(paragraphs));
     }
-
-
 }
